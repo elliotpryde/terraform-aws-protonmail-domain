@@ -33,4 +33,5 @@ variable "dmarc_policy" {
 variable "additional_dmarc_flags" {
   type = list(string)
   description = "Additional flags to append to the DMARC record."
+  default = []
 }
