@@ -4,14 +4,15 @@ terraform {
   experiments = [variable_validation]
 }
 
-resource "aws_route53_record" "verify" {
+resource "aws_route53_record" "verify_and_spf" {
   name = ""
   type = "TXT"
   ttl = local.ttl
   zone_id = var.zone_id
 
   records = [
-    var.verification_data
+    var.verification_data,
+    "v=spf1 include:_spf.protonmail.ch mx ~all"
   ]
 }
 
@@ -23,17 +24,6 @@ resource "aws_route53_record" "mx" {
   records = [
     "10 mail.protonmail.ch",
     "20 mailsec.protonmail.ch"
-  ]
-}
-
-resource "aws_route53_record" "spf" {
-  name = ""
-  type = "TXT"
-  ttl = local.ttl
-  zone_id = var.zone_id
-
-  records = [
-    "v=spf1 include:_spf.protonmail.ch mx ~all"
   ]
 }
 
