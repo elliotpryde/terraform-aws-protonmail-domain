@@ -4,6 +4,9 @@
 
 ```hcl
 module "protonmail-domain" {
+  source  = "app.terraform.io/elliotpryde/protonmail-domain/aws"
+  version = "0.1.0"
+
   zone_id = aws_route53_zone.my-zone.zone_id
   verification_data = "protonmail-verification=<verification-string>"
   dkim_records = [
