@@ -27,6 +27,7 @@ variable "dmarc_policy" {
     condition = var.dmarc_policy == "none" || var.dmarc_policy == "quarantine" || var.dmarc_policy == "reject"
     error_message = "The DMARC policy must be either none|quarantine|reject."
   }
+  default = "none"
 }
 
 variable "additional_dmarc_flags" {
