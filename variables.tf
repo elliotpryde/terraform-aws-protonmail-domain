@@ -24,9 +24,7 @@ variable "dmarc_policy" {
   type = string
   description = "The action other email services should take when SPF and DKIM checks have failed."
   validation {
-    condition = {
-      var.dmarc_policy == "none" || var.dmarc_policy = "quarantine" || var.dmarc_policy = "reject"
-    }
+    condition = var.dmarc_policy == "none" || var.dmarc_policy == "quarantine" || var.dmarc_policy == "reject"
     error_message = "The DMARC policy must be either none|quarantine|reject."
   }
 }
