@@ -8,16 +8,16 @@ module "protonmail-domain" {
   verification_data = "protonmail-verification=<verification-string>"
   dkim_records = [
     {
-      hostname = "protonmail._domainkey"
-      data = "protonmail.domainkey.d4zotdvax2nt4447zdfl5bkm6uc3lozcidvlw5jdxq3hhurmq3u5q.domains.proton.ch.",
+      hostname = "protonmail._domainkey",
+      data = "protonmail.domainkey.d4zotdvax2nt4447zdfl5bkm6uc3lozcidvlw5jdxq3hhurmq3u5q.domains.proton.ch."
     },
     {
-      hostname = "protonmail2._domainkey"
-      data = "protonmail2.domainkey.d4zotdvax2nt4447zdfl5bkm6uc3lozcidvlw5jdxq3hhurmq3u5q.domains.proton.ch.",
+      hostname = "protonmail2._domainkey",
+      data = "protonmail2.domainkey.d4zotdvax2nt4447zdfl5bkm6uc3lozcidvlw5jdxq3hhurmq3u5q.domains.proton.ch."
     },
     {
-      hostname = "protonmail3._domainkey"
-      data = "protonmail3.domainkey.d4zotdvax2nt4447zdfl5bkm6uc3lozcidvlw5jdxq3hhurmq3u5q.domains.proton.ch.",
+      hostname = "protonmail3._domainkey",
+      data = "protonmail3.domainkey.d4zotdvax2nt4447zdfl5bkm6uc3lozcidvlw5jdxq3hhurmq3u5q.domains.proton.ch."
     }
   ]
   dmarc_policy = "quarantine"
