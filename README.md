@@ -1,11 +1,15 @@
 # terraform-aws-protonmail-domain
 
+This module provides a simple way to set up a ProtonMail custom domain using an AWS Route53 hosted zone.
+
+For this to work, your registered domain must be configured to use the AWS hosted zone's name servers to respond to DNS queries for your domain.
+
 ## Example usage
 
 ```hcl
 module "protonmail-domain" {
   source  = "app.terraform.io/elliotpryde/protonmail-domain/aws"
-  version = "0.1.0"
+  version = "1.0.0"
 
   zone_id = aws_route53_zone.my-zone.zone_id
   verification_data = "protonmail-verification=<verification-string>"
