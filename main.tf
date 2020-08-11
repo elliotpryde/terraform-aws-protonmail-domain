@@ -1,9 +1,3 @@
-terraform {
-  required_version = "~> 0.12"
-  # this can be removed once 0.13 is released
-  experiments = [variable_validation]
-}
-
 resource "aws_route53_record" "verify_and_spf" {
   name = ""
   type = "TXT"
